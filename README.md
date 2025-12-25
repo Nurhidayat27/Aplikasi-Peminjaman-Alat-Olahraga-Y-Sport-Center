@@ -97,16 +97,6 @@ User adalah peminjam alat olahraga.
 
 ---
 
-## 🗂️ Struktur Menu Aplikasi
----
-YAYATSPORT/
-├── app/                      # Routing utama (Expo Router)
-│   ├── (tabs)/               # Tab navigation
-│   ├── layout.tsx            # Layout utama aplikasi
-│   ├── login.tsx             # Halaman login
-│   ├── modal.tsx             # Modal screen
-│   └── register.tsx          # Halaman registrasi
----
 ### 🔐 Admin
 
 
