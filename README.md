@@ -100,57 +100,13 @@ User adalah peminjam alat olahraga.
 ## 🗂️ Struktur Menu Aplikasi
 ---
 YAYATSPORT/
-│
-├── .expo/                    # Konfigurasi internal Expo
-├── .vscode/                  # Konfigurasi VS Code
-│
 ├── app/                      # Routing utama (Expo Router)
 │   ├── (tabs)/               # Tab navigation
 │   ├── layout.tsx            # Layout utama aplikasi
 │   ├── login.tsx             # Halaman login
 │   ├── modal.tsx             # Modal screen
 │   └── register.tsx          # Halaman registrasi
-│
-├── assets/                   # Asset statis (icon, gambar, font)
-│
-├── components/               # Reusable UI components
-│
-├── constants/                # Konstanta global (warna, ukuran, dll)
-│
-├── hooks/                    # Custom React Hooks
-│
-├── node_modules/             # Dependency NPM
-│
-├── scripts/                  # Script tambahan (build / helper)
-│
-├── src/                      # Core aplikasi
-│   │
-│   ├── context/              # Context API
-│   │   └── AuthContext.tsx   # Context autentikasi
-│   │
-│   ├── database/             # Konfigurasi database
-│   │   └── db.ts             # Koneksi PostgreSQL
-│   │
-│   ├── models/               # Model data
-│   │   └── Alat.ts           # Model alat olahraga
-│   │
-│   ├── services/             # Logic komunikasi data
-│   │   ├── alatService.ts        # Service alat olahraga
-│   │   ├── authService.ts        # Service autentikasi
-│   │   └── peminjamanService.ts # Service peminjaman
-│   │
-│   └── types/                # TypeScript types & interfaces
-│
-├── .gitignore                # File yang diabaikan Git
-├── app.json                  # Konfigurasi aplikasi Expo
-├── eslint.config.js           # Konfigurasi ESLint
-├── expo-env.d.ts              # Type Expo
-├── package.json               # Informasi project & dependency
-├── package-lock.json          # Lock dependency
-├── README.md                  # Dokumentasi aplikasi
-└── tsconfig.json              # Konfigurasi TypeScript
 ---
-
 ### 🔐 Admin
 
 
