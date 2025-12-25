@@ -98,6 +98,7 @@ User adalah peminjam alat olahraga.
 ---
 
 ## 🗂️ Struktur Menu Aplikasi
+---
 YAYATSPORT/
 │
 ├── .expo/                    # Konfigurasi internal Expo
@@ -148,6 +149,7 @@ YAYATSPORT/
 ├── package-lock.json          # Lock dependency
 ├── README.md                  # Dokumentasi aplikasi
 └── tsconfig.json              # Konfigurasi TypeScript
+---
 
 ### 🔐 Admin
 
