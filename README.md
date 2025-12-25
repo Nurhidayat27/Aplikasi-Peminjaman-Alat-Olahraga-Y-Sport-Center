@@ -39,9 +39,12 @@ Pastikan sudah terinstall:
 - **Expo CLI**
 - **Aplikasi Expo Go** (Android / iOS)
 
-## Cara Clone Project ini
-git clone https://github.com/username/y-sport-center.git
-cd y-sport-center
+## 🚀 Cara Menjalankan Proyek
+**Clone repository ini**
+   ```bash
+   git clone https://github.com/username/y-sport-center.git
+   cd y-sport-center
+   ```
 
 1. Install dependencies
 
