@@ -1,8 +1,47 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 📌 Deskripsi Aplikasi
+**Y-Sport Center** adalah aplikasi peminjaman alat olahraga yang dirancang untuk memudahkan proses pengelolaan, peminjaman, dan pengembalian alat olahraga secara digital.  
+Aplikasi ini memiliki dua peran pengguna, yaitu **Admin** dan **User**, dengan hak akses dan fitur yang berbeda.
+Project ini dibangun menggunakan **Expo Router (file-based routing)** dan **TypeScript**.
 
-## Get started
+Aplikasi ini cocok digunakan untuk:
+- Pusat kebugaran
+- Komunitas olahraga
+- Club olahraga
+
+---
+
+## 📱 Screenshot Aplikasi
+
+Tampilan antarmuka Sistem Penjualan Sparepart Motor:
+
+| Screenshot | Screenshot |
+|-----------|------------|
+<img src="assets/images/register.jpeg" width="400"> | <img src="assets/images/login.jpeg" width="400"> 
+| <img src="assets/images/home.jpeg" width="400"> | <img src="assets/images/pinjam.jpeg" width="400">
+| <img src="assets/images/kembali.jpeg" width="400"> | <img src="assets/images/riwayat.jpeg" width="400">
+| <img src="assets/images/profile.jpeg" width="400">
+
+## 🎯 Tujuan Aplikasi
+- Mengelola data alat olahraga secara terpusat
+- Mempermudah proses peminjaman dan pengembalian alat
+- Menghindari kehilangan alat
+- Menyediakan riwayat peminjaman yang jelas dan terstruktur
+
+---
+
+## 🚀 Cara Menjalankan Aplikasi
+
+### 1️⃣ Persiapan Awal
+Pastikan sudah terinstall:
+- **Node.js** (versi LTS)
+- **NPM**
+- **Expo CLI**
+- **Aplikasi Expo Go** (Android / iOS)
+
+## Cara Clone Project ini
+git clone https://github.com/username/y-sport-center.git
+cd y-sport-center
 
 1. Install dependencies
 
@@ -16,35 +55,118 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## 👥 Hak Akses Pengguna
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 1️⃣ Admin
+Admin bertugas mengelola seluruh sistem dalam aplikasi.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+**Fitur Admin:**
+- Home / Dashboard
+- Manajemen alat olahraga
+  - Tambah alat
+  - Edit alat
+  - Hapus alat
+- Manajemen peminjam
+- Data alat yang sudah dikembalikan
+- Riwayat peminjaman
+- Profil admin
 
-## Get a fresh project
+---
 
-When you're ready, run:
+### 2️⃣ User
+User adalah peminjam alat olahraga.
 
-```bash
-npm run reset-project
-```
+**Fitur User:**
+- Home
+- Peminjaman alat olahraga
+- Pengembalian alat
+- Riwayat peminjaman pribadi
+- Profil user
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🛠️ Teknologi yang Digunakan
+- **Frontend**: Expo (React Native)
+- **Backend**: (Opsional / dapat dikembangkan)
+- **Database**: PostgreSQL
+- **Platform**: Android / iOS
+- **Bahasa Pemrograman**: JavaScript / TypeScript
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🗂️ Struktur Menu Aplikasi
+YAYATSPORT/
+│
+├── .expo/                    # Konfigurasi internal Expo
+├── .vscode/                  # Konfigurasi VS Code
+│
+├── app/                      # Routing utama (Expo Router)
+│   ├── (tabs)/               # Tab navigation
+│   ├── layout.tsx            # Layout utama aplikasi
+│   ├── login.tsx             # Halaman login
+│   ├── modal.tsx             # Modal screen
+│   └── register.tsx          # Halaman registrasi
+│
+├── assets/                   # Asset statis (icon, gambar, font)
+│
+├── components/               # Reusable UI components
+│
+├── constants/                # Konstanta global (warna, ukuran, dll)
+│
+├── hooks/                    # Custom React Hooks
+│
+├── node_modules/             # Dependency NPM
+│
+├── scripts/                  # Script tambahan (build / helper)
+│
+├── src/                      # Core aplikasi
+│   │
+│   ├── context/              # Context API
+│   │   └── AuthContext.tsx   # Context autentikasi
+│   │
+│   ├── database/             # Konfigurasi database
+│   │   └── db.ts             # Koneksi PostgreSQL
+│   │
+│   ├── models/               # Model data
+│   │   └── Alat.ts           # Model alat olahraga
+│   │
+│   ├── services/             # Logic komunikasi data
+│   │   ├── alatService.ts        # Service alat olahraga
+│   │   ├── authService.ts        # Service autentikasi
+│   │   └── peminjamanService.ts # Service peminjaman
+│   │
+│   └── types/                # TypeScript types & interfaces
+│
+├── .gitignore                # File yang diabaikan Git
+├── app.json                  # Konfigurasi aplikasi Expo
+├── eslint.config.js           # Konfigurasi ESLint
+├── expo-env.d.ts              # Type Expo
+├── package.json               # Informasi project & dependency
+├── package-lock.json          # Lock dependency
+├── README.md                  # Dokumentasi aplikasi
+└── tsconfig.json              # Konfigurasi TypeScript
 
-## Join the community
+### 🔐 Admin
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 🧩 Fitur Utama
+- Autentikasi Login & Register
+- Manajemen data alat olahraga
+- Sistem peminjaman dan pengembalian
+- Riwayat peminjaman (tracking)
+- Profil pengguna
+- Role-based access (Admin & User)
+
+---
+
+## 🗃️ Gambaran Database (Sederhana)
+Tabel utama yang digunakan:
+- users
+- alat_olahraga
+- peminjaman
+- pengembalian
+- riwayat
+
+---

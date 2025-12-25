@@ -1,24 +1,48 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { Slot, router, usePathname } from "expo-router";
+import { useEffect } from "react";
+import { initDB } from "@/src/database/db";
+import { AuthProvider, useAuth } from "@/src/context/AuthContext";
+import { View, ActivityIndicator } from "react-native";
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
+function AuthGate() {
+  const { user, ready } = useAuth();
+  const pathname = usePathname();
 
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+  useEffect(() => {
+    if (!ready) return;
+
+    const publicRoutes = ["/login", "/register"];
+
+    // ❌ belum login → hanya boleh ke login & register
+    if (!user && !publicRoutes.includes(pathname)) {
+      router.replace("/login");
+    }
+
+    // ❌ sudah login → tidak boleh ke login & register
+    if (user && publicRoutes.includes(pathname)) {
+      router.replace("/(tabs)");
+    }
+  }, [user, ready, pathname]);
+
+  if (!ready) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center" }}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
+  return <Slot />;
+}
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  useEffect(() => {
+    initDB();
+  }, []);
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <AuthProvider>
+      <AuthGate />
+    </AuthProvider>
   );
 }
